@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Professional Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Game Container -->
+    <div class="game-wrapper">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="game-header">
+                <h1 class="game-title">TIC TAC TOE</h1>
+                <p class="game-subtitle">Professional Edition</p>
+            </div>
+
+            <!-- Game Controls -->
+            <div class="game-controls">
+                <div class="control-group">
+                    <button id="mute-unmute" class="control-btn">
+                        <img src="mute.svg" alt="mute" id="sound-icon">
+                    </button>
+                    <div class="difficulty-selector">
+                        <select id="difficulty">
+                            <option value="human">2 Players</option>
+                            <option value="easy">vs AI Easy</option>
+                            <option value="hard">vs AI Hard</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Board -->
+            <div class="score-board">
+                <div class="score-item">
+                    <div class="score-label">Player X</div>
+                    <div class="score-value" id="score-x">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Draws</div>
+                    <div class="score-value" id="score-draw">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Player O</div>
+                    <div class="score-value" id="score-o">0</div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-container">
+                <div class="stat-row">
+                    <span class="stat-label">Games:</span>
+                    <span class="stat-value" id="games-played">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Streak:</span>
+                    <span class="stat-value" id="current-streak">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Best:</span>
+                    <span class="stat-value" id="best-streak">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Panel - Game Grid -->
+        <div class="center-panel">
+            <!-- Turn Indicator -->
+            <div class="turn-container">
+                <h3>Current Turn</h3>
+                <div class="turn-display">
+                    <div class="turn-box align">X</div>
+                    <div class="turn-box align">O</div>
+                    <div class="bg"></div>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="game-container">
+                <div class="main-grid">
+                    <div class="box align" data-index="0"></div>
+                    <div class="box align" data-index="1"></div>
+                    <div class="box align" data-index="2"></div>
+                    <div class="box align" data-index="3"></div>
+                    <div class="box align" data-index="4"></div>
+                    <div class="box align" data-index="5"></div>
+                    <div class="box align" data-index="6"></div>
+                    <div class="box align" data-index="7"></div>
+                    <div class="box align" data-index="8"></div>
+                </div>
+                
+                <!-- Winning Line Animation -->
+                <div class="winning-line" id="winning-line"></div>
+            </div>
+
+            <!-- Game Result -->
+            <div class="game-result">
+                <h2 id="results"></h2>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="panel-header">
+                <h3>Game Controls</h3>
+            </div>
+
+            <!-- Game Buttons -->
+            <div class="game-buttons">
+                <button id="reset-game" class="game-btn primary">
+                    <span>🔄</span>
+                    Reset Game
+                </button>
+                <button id="play-again" class="game-btn secondary">
+                    <span>▶️</span>
+                    Play Again
+                </button>
+                <button id="clear-scores" class="game-btn tertiary">
+                    <span>🗑️</span>
+                    Clear Scores
+                </button>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h4>How to Play</h4>
+                <div class="instruction-item">
+                    <span class="key">1-9</span>
+                    <span>Place symbol</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">R</span>
+                    <span>Reset game</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">Space</span>
+                    <span>Play again</span>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="quick-stat">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="win-rate">0%</div>
+                        <div class="stat-name">Win Rate</div>
+                    </div>
+                </div>
+                <div class="quick-stat">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="avg-moves">0</div>
+                        <div class="stat-name">Avg Moves</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Effects -->
+    <div class="celebration" id="celebration"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
